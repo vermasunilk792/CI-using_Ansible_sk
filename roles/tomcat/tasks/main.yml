@@ -1,6 +1,6 @@
 ---
 - name: Install Java 1.8
-  shell: apt-get install openjdk-8-jdk
+  shell: apt-get install openjdk-8-jdk -y
 
 - name: add group "tomcat"
   group: name={{tomcat_group}}
