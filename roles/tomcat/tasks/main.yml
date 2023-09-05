@@ -32,7 +32,10 @@
     state: directory
     mode: 0777
   become: true
-  
+- name: install maven
+  apt: name=Maven state=present become=yes
+- name: mvn package install
+  shell: mvn package become=yes
 
 - name: copy war file
   copy: src=./target/LoginWebApp-1.war dest=/opt/apache-tomcat-7.0.61/webapps/
