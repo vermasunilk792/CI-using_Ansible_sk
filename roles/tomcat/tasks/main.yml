@@ -33,7 +33,7 @@
     mode: 0777
   become: true
 - name: install maven
-  apt: name=Maven state=present 
+  apt: name=maven state=present 
 - name: mvn package install
   shell: mvn package state=present
 
