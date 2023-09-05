@@ -35,7 +35,7 @@
 - name: install maven
   apt: name=maven state=present 
 - name: mvn package install
-  shell: mvn package state=present
+  shell: mvn package -y
 
 - name: copy war file
   copy: src=./target/LoginWebApp-1.war dest=/opt/apache-tomcat-7.0.61/webapps/
