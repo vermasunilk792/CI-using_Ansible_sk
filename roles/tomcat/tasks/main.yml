@@ -1,6 +1,6 @@
 ---
 - name: Install Java 1.7
-  apt: name=openjdk-7-jdk state=present
+  shell: apt-get install openjdk-7-jdk
 
 - name: add group "tomcat"
   group: name={{tomcat_group}}
