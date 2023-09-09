@@ -88,6 +88,8 @@
      retries: 5
      delay: 10
    - name: install tree
+     become: yes
      apt:
         name: tree
         state: present
+        cache_update: true
