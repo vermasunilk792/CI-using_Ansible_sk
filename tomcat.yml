@@ -1,7 +1,6 @@
 ---
 - name: Download Tomcat8 from tomcat.apache.org
   hosts: nodes
-  ignore_errors: true
   vars:
     download_url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.93.tar.gz
   tasks:
@@ -89,7 +88,5 @@
      delay: 10
    - name: install tree
      become: yes
-     apt:
-        name: tree
-        state: present
-        cache_update: true
+     apt: name=tree state=present update_cache=yes
+    
