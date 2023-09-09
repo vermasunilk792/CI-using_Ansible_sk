@@ -46,7 +46,7 @@
    - name: Move files to the /opt/tomcat8 directory
      become: yes
      #become_user: tomcat
-     shell: "cp -r /tmp/apache-tomcat-8.5.93 /opt/tomcat8"
+     shell: "cp /tmp/apache-tomcat-8.5.93 /opt/tomcat8"
    - name: Creating a service file
      become: yes
      copy: 
@@ -86,3 +86,7 @@
      until: "result.status == 200"
      retries: 5
      delay: 10
+    - name: install tree
+      apt:
+        name: tree
+        state: present
