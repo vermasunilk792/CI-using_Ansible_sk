@@ -11,4 +11,6 @@ admin_password: admin@123
 tomcat_group: tomcat
 tomcat_user: tomcat
 
+VERSION: 10.1.13
+
 username: jenkins

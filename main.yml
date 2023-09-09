@@ -3,7 +3,7 @@
   become: yes
   become_user: root
   gather_facts: false
+  ignore_errors: true
   tasks:
     - include_role:
         name: tomcat
-      
