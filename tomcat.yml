@@ -46,7 +46,7 @@
    - name: Move files to the /opt/tomcat8 directory
      become: yes
      #become_user: tomcat
-     shell: "mv /tmp/apache-tomcat-8.5.93 /opt/tomcat8"
+     shell: "cp /tmp/apache-tomcat-8.5.93 /opt/tomcat8"
    - name: Creating a service file
      become: yes
      copy: 
