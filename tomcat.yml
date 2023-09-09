@@ -86,7 +86,7 @@
      until: "result.status == 200"
      retries: 5
      delay: 10
-    - name: install tree
-      apt:
+   - name: install tree
+     apt:
         name: tree
         state: present
