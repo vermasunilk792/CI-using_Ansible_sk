@@ -37,15 +37,16 @@
      become: yes
      unarchive:
        src: ./apache-tomcat-8.5.93.tar.gz
-       dest: /opt/tomcat8
+       dest: /tmp/
+       remote_src: yes
        group: tomcat
        owner: tomcat
        mode: 0755
     
    - name: Move files to the /opt/tomcat8 directory
      become: yes
-       #become_user: root
-     shell: "mv /opt/tomcat8/apache*/* /opt/tomcat8"
+     become_user: tomcat
+     shell: "mv /tmp/ /opt/tomcat8"
    - name: Creating a service file
      become: yes
      copy: 
@@ -80,7 +81,7 @@
    - name: Connect to Tomcat server on port 8080 and check status 200 - Try 5 times
      tags: test
      uri:
-       url: http://3.92.82.37:8080
+       url: http://localhost:8080
      register: result
      until: "result.status == 200"
      retries: 5
